@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: doyto-cloud-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/spring-cloud-samples/config-repo
+          basedir: target/config
+
+logging:
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+
+management:
+  context-path: /admin
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    statusPageUrlPath: /admin/info
+    healthCheckUrlPath: /admin/health
+

@@ -1,0 +1,18 @@
+server:
+  port: ${registry.server.port:8761}
+
+eureka:
+  instance:
+    non-secure-port: 0
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+
+encrypt:
+  failOnError: false
+  key-store:
+    location: classpath:keystore.jks
+    password: ${KEYSTORE_PASSWORD:doyto-cloud} # don't use a default in production
+    alias: test
