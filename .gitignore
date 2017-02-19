@@ -1,0 +1,6 @@
+.idea
+doyto-cloud-config/src/test/
+doyto-cloud-registry/src/test/
+*.iml
+temp*
+*/target/
