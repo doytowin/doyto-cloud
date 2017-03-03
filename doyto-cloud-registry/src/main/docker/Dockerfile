@@ -1,4 +1,4 @@
-wFROM openjdk:8u111-jre-alpine
+FROM openjdk:8u111-jre-alpine
 ADD doyto-cloud-registry-1.0.0.jar app.jar
 VOLUME /tmp
 VOLUME /target
