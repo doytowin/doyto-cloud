@@ -6,29 +6,45 @@
         <artifactId>doyto-cloud-parent</artifactId>
         <groupId>win.doyto.cloud</groupId>
         <version>1.0.0</version>
+        <relativePath>../doyto-cloud-parent</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>doyto-cloud-registry</artifactId>
+    <artifactId>doyto-cloud-gateway</artifactId>
     <version>1.0.0</version>
 
     <properties>
-        <mainClass>win.doyto.cloud.CloudRegistryApp</mainClass>
+
+        <mainClass>win.doyto.cloud.CloudGatewayApp</mainClass>
     </properties>
 
     <dependencies>
+        <!--<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-zuul</artifactId>
         </dependency>
         <!--<dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-netflix-sidecar</artifactId>
+        </dependency>-->
+        <!--<dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-commons</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-commons</artifactId>
+            <artifactId>spring-cloud-netflix-eureka-server</artifactId>
         </dependency>-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -42,7 +58,7 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <configuration>
                     <exposes>
-                        <expose>8761</expose>
+                        <expose>8080</expose>
                     </exposes>
                 </configuration>
             </plugin>

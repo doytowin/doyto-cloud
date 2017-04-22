@@ -1,24 +1,24 @@
-spring:
-  application:
-    name: doyto-cloud-config
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/spring-cloud-samples/config-repo
-          basedir: target/config
-
 logging:
   level:
-    com.netflix.discovery: 'OFF'
-    org.springframework.cloud: 'DEBUG'
-
-management:
-  context-path: /admin
+#    com.netflix.discovery: 'OFF'
+#    org.springframework.cloud: 'DEBUG'
 
 eureka:
-  instance:
-    leaseRenewalIntervalInSeconds: 10
-    statusPageUrlPath: /admin/info
-    healthCheckUrlPath: /admin/health
+  client:
+    serviceUrl:
+      defaultZone: http://${host.master:localhost}:8761/eureka/
+
+management:
+  security:
+    enabled: false
+
+spring:
+  rabbitmq:
+    host: ${host.rabbit:localhost}
+    port: 5672
+    username: admin
+    password: admin
+
+
+
 

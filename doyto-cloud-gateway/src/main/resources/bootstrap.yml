@@ -1,13 +1,25 @@
 server:
-  port: 8761
+  port: 8080
+
+sidecar:
+  port: 8000
 
 spring:
   application:
-    name: doyto-cloud-registry
+    name: doyto-cloud-gateway
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: doyto-cloud-config
 
 eureka:
   instance:
     prefer-ip-address: true
+#    non-secure-port: 0
+  client:
+    fetch-registry: true
+#    register-with-eureka: true
 
 #encrypt:
 #  failOnError: false

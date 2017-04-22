@@ -1,0 +1,25 @@
+spring:
+  rabbitmq:
+    host: ${host.rabbit:${host.master:localhost}}
+    port: 5672
+    username: admin
+    password: admin
+
+management:
+  security:
+    enabled: false
+
+zuul:
+  ignoredServices: '*'
+  routes:
+    doyto-service-all:
+      sensitiveHeaders:
+      #sensitiveHeaders: Cookie,Set-Cookie,Authorization
+      stripPrefix: false
+      path: /api/**
+      serviceId: doyto-service-all
+
+logging:
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'

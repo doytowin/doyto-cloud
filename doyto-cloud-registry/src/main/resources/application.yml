@@ -1,11 +1,32 @@
-spring:
-  application:
-    name: spring-cloud-registry
-  cloud:
-    config:
-      uri: ${config.server.url:http://localhost:8888}
-
 logging:
   level:
-    com.netflix.discovery: 'OFF'
-    org.springframework.cloud: 'DEBUG'
+    root: info
+#    com.netflix.discovery: 'OFF'
+#    org.springframework.cloud: 'DEBUG'
+
+spring:
+  rabbitmq:
+    host: ${host.master:localhost}
+    port: 5672
+    username: admin
+    password: admin
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+#    registerWithEureka: false
+#    fetchRegistry: false
+  server:
+    wait-time-in-ms-when-sync-empty: 0
+
+---
+spring:
+  profiles: dev
+eureka:
+  server:
+    enable-self-preservation: false
+
+management:
+  security:
+    enabled: false
