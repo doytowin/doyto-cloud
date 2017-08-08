@@ -4,19 +4,3 @@ spring:
     port: 5672
     username: ${RABBITMQ_DEFAULT_USER:admin}
     password: ${RABBITMQ_DEFAULT_PASS:admin}
-
-zuul:
-  ignoredServices: '*'
-  routes:
-    doyto-server-sso:
-      sensitiveHeaders:
-      #sensitiveHeaders: Cookie,Set-Cookie,Authorization
-      stripPrefix: false
-      path: /api/sso/**
-      serviceId: doyto-server-sso
-    doyto-service-i18n-openapi:
-      sensitiveHeaders: #Cookie,Set-Cookie,Authorization
-      stripPrefix: false
-      path: /openapi/i18n/**
-      url: http://${ENV_HOST}:9018/
-
