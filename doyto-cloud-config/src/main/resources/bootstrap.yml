@@ -1,9 +1,9 @@
 server:
-  port: 8888
+  port: @docker.expose@
 
 spring:
   application:
-    name: doyto-cloud-config
+    name: configserver
   cloud:
     config:
       server:
@@ -12,9 +12,13 @@ spring:
           password: os--0404
           uri: https://git.oschina.net/doyto/doyto-config.git
 
-eureke:
-  instance:
-    prefer-ip-address: true
+info:
+  version: @project.version@
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_HOST:eureka}:8761/eureka/
 
 #encrypt:
 #  failOnError: false

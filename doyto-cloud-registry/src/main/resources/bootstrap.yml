@@ -9,6 +9,9 @@ eureka:
   instance:
     prefer-ip-address: true
 
+info:
+  version: @project.version@
+
 #encrypt:
 #  failOnError: false
 #  key-store:

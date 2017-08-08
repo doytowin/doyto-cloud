@@ -11,10 +11,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>doyto-cloud-config</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <properties>
-        <mainClass>win.doyto.cloud.CloudConfigApp</mainClass>
+        <start-class>win.doyto.cloud.CloudConfigApp</start-class>
+        <docker.expose>8888</docker.expose>
     </properties>
 
     <dependencies>
@@ -36,11 +37,6 @@
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <configuration>
-                    <exposes>
-                        <expose>8888</expose>
-                    </exposes>
-                </configuration>
             </plugin>
         </plugins>
     </build>

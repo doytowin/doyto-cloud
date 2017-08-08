@@ -1,32 +1,34 @@
-logging:
-  level:
-    root: info
-#    com.netflix.discovery: 'OFF'
-#    org.springframework.cloud: 'DEBUG'
-
 spring:
   rabbitmq:
-    host: ${host.master:localhost}
+    host: ${RABBITMQ_DEFAULT_HOST:${ENV_HOST}}
     port: 5672
-    username: admin
-    password: admin
+    username: ${RABBITMQ_DEFAULT_USER:admin}
+    password: ${RABBITMQ_DEFAULT_PASS:admin}
 
 eureka:
-  instance:
-    prefer-ip-address: true
   client:
-#    registerWithEureka: false
-#    fetchRegistry: false
+    registerWithEureka: false
+    fetchRegistry: false
   server:
     wait-time-in-ms-when-sync-empty: 0
 
 ---
 spring:
   profiles: dev
+
 eureka:
   server:
     enable-self-preservation: false
 
-management:
-  security:
-    enabled: false
+---
+spring:
+  profiles: eureka_cluster
+
+eureka:
+  server:
+    enable-self-preservation: false
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${EUREKA_HOST:eureka}:8761/eureka/

@@ -1,24 +1,8 @@
-logging:
-  level:
-#    com.netflix.discovery: 'OFF'
-#    org.springframework.cloud: 'DEBUG'
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://${host.master:localhost}:8761/eureka/
-
-management:
-  security:
-    enabled: false
-
 spring:
   rabbitmq:
-    host: ${host.rabbit:localhost}
+    host: ${RABBITMQ_DEFAULT_HOST:${ENV_HOST}}
     port: 5672
-    username: admin
-    password: admin
-
-
+    username: ${RABBITMQ_DEFAULT_USER:admin}
+    password: ${RABBITMQ_DEFAULT_PASS:admin}
 
 

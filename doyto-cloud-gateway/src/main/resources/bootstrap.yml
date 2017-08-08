@@ -1,8 +1,8 @@
 server:
   port: 8080
 
-sidecar:
-  port: 8000
+#sidecar:
+#  port: 8000
 
 spring:
   application:
@@ -11,15 +11,14 @@ spring:
     config:
       discovery:
         enabled: true
-        service-id: doyto-cloud-config
+
+info:
+  version: @project.version@
 
 eureka:
-  instance:
-    prefer-ip-address: true
-#    non-secure-port: 0
   client:
-    fetch-registry: true
-#    register-with-eureka: true
+    service-url:
+      defaultZone: http://${EUREKA_HOST:eureka}:8761/eureka/
 
 #encrypt:
 #  failOnError: false
