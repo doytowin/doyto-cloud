@@ -209,7 +209,7 @@
                         </execution>
                     </executions>
                     <configuration>
-                        <pushImage>${docker.image.push}</pushImage>
+                        <pushImage>true</pushImage>
                         <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
                         <baseImage>${docker.image.base}</baseImage>
                         <imageTags>
