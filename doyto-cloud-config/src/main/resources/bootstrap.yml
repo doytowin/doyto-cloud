@@ -10,7 +10,7 @@ spring:
         git:
           username: f0rb@icloud.com
           password: os--0404
-          uri: https://git.oschina.net/doyto/doyto-config.git
+          uri: https://gitee.com/doyto/doyto-config.git
 
 info:
   version: @project.version@
