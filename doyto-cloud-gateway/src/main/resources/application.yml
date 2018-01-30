@@ -4,3 +4,17 @@ spring:
     port: 5672
     username: ${RABBITMQ_DEFAULT_USER:admin}
     password: ${RABBITMQ_DEFAULT_PASS:admin}
+
+zuul:
+  ignored-services: '*'
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+
+ribbon:
+  ConnectTimeout: 10000
+  ReadTimeout: 100000
