@@ -1,19 +1,18 @@
 package win.doyto.cloud;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * SimpleFilter
+ * LogFilter
  *
  * @author f0rb on 2017-03-23.
  */
 @Slf4j
-public class SimpleFilter  extends ZuulFilter {
+public class LogFilter extends ZuulFilter {
 
     @Override
     public String filterType() {
@@ -32,11 +31,9 @@ public class SimpleFilter  extends ZuulFilter {
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
-        HttpServletResponse response = ctx.getResponse();
+        //HttpServletResponse response = ctx.getResponse();
 
-        //response.addHeader("Access-Control-Allow-Credentials", "true");
         log.info(String.format("%s request to %s", request.getMethod(), request.getRequestURL().toString()));
-
         return null;
     }
 
