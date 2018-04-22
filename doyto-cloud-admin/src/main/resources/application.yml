@@ -1,10 +1,10 @@
-eureka:
-  instance:
-    leaseRenewalIntervalInSeconds: 10
-  client:
-    registryFetchIntervalSeconds: 5
-
 spring:
+  application:
+    name: @project.artifactId@
+  cloud:
+    config:
+      discovery:
+        enabled: true
   rabbitmq:
     host: ${RABBITMQ_DEFAULT_HOST:${ENV_HOST}}
     port: 5672

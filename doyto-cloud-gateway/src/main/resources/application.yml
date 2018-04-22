@@ -1,4 +1,10 @@
 spring:
+  application:
+    name: doyto-cloud-gateway
+  cloud:
+    config:
+      discovery:
+        enabled: true
   rabbitmq:
     host: ${RABBITMQ_DEFAULT_HOST:${ENV_HOST}}
     port: 5672

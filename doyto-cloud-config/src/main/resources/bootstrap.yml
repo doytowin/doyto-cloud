@@ -1,19 +1,10 @@
 server:
   port: @docker.expose@
 
-spring:
-  application:
-    name: configserver
-  cloud:
-    config:
-      server:
-        git:
-          username: f0rb@icloud.com
-          password: os--0404
-          uri: https://gitee.com/doyto/doyto-config.git
-
 info:
+  name: @project.artifactId@
   version: @project.version@
+  date: @maven.build.timestamp@
 
 eureka:
   client:

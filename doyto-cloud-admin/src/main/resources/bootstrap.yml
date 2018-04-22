@@ -1,20 +1,13 @@
 server:
   port: @docker.expose@
 
-spring:
-  application:
-    name: @project.artifactId@
-  cloud:
-    config:
-      discovery:
-        enabled: true
+# /info 端点的显示
+info:
+  name: @project.artifactId@
+  version: @project.version@
+  date: @maven.build.timestamp@
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://${EUREKA_HOST:eureka}:8761/eureka/
-
-# /info 端点的显示
-info:
-  version: @project.version@
-

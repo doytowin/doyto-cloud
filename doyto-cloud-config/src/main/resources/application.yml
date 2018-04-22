@@ -1,8 +1,15 @@
 spring:
+  application:
+    name: configserver
   rabbitmq:
     host: ${RABBITMQ_DEFAULT_HOST:${ENV_HOST}}
     port: 5672
     username: ${RABBITMQ_DEFAULT_USER:admin}
     password: ${RABBITMQ_DEFAULT_PASS:admin}
-
-
+  cloud:
+    config:
+      server:
+        git:
+          username: f0rb@icloud.com
+          password: os--0404
+          uri: https://gitee.com/doyto/doyto-config.git

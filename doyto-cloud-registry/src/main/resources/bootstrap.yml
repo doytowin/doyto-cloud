@@ -1,20 +1,7 @@
 server:
   port: 8761
 
-spring:
-  application:
-    name: doyto-cloud-registry
-
-eureka:
-  instance:
-    prefer-ip-address: true
-
 info:
+  name: @project.artifactId@
   version: @project.version@
-
-#encrypt:
-#  failOnError: false
-#  key-store:
-#    location: classpath:keystore.jks
-#    password: ${KEYSTORE_PASSWORD:doyto-cloud} # don't use a default in production
-#    alias: test
+  date: @maven.build.timestamp@

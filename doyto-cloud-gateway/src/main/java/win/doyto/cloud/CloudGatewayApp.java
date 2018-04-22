@@ -18,14 +18,4 @@ public class CloudGatewayApp {
     public static void main(String[] args) {
         SpringApplication.run(CloudGatewayApp.class, args);
     }
-
-    @Bean
-    public LogFilter logFilter() {
-        return new LogFilter();
-    }
-
-    //@Override
-    //protected void configure(HttpSecurity httpSecurity) throws Exception {
-    //    httpSecurity.addFilterBefore(corsFilter(), ChannelProcessingFilter.class);
-    //}
 }

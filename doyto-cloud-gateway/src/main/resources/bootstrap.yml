@@ -4,16 +4,10 @@ server:
 #sidecar:
 #  port: 8000
 
-spring:
-  application:
-    name: doyto-cloud-gateway
-  cloud:
-    config:
-      discovery:
-        enabled: true
-
 info:
+  name: @project.artifactId@
   version: @project.version@
+  date: @maven.build.timestamp@
 
 eureka:
   client:
