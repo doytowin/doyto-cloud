@@ -28,7 +28,7 @@
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
         <!--'T'HH:mm:ss-->
         <docker.image.prefix>docker.doyto.win</docker.image.prefix>
-        <docker.image.base>openjdk:8-jre-alpine</docker.image.base>
+        <docker.image.base>docker.doyto.win/openjdk:8-jre-alpine</docker.image.base>
         <docker.image.push>false</docker.image.push>
         <docker.expose>0</docker.expose>
         <docker.plugin.version>1.0.0</docker.plugin.version>
@@ -72,6 +72,10 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-hystrix</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-security</artifactId>
         </dependency>
     </dependencies>
 
@@ -225,7 +229,7 @@
                         <env>
                             <JAVA_OPTS>""</JAVA_OPTS>
                         </env>
-                        <entryPoint>[ "sh", "-c", "java -Duser.timezone=GMT+08 $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /${project.build.finalName}.jar"]</entryPoint>
+                        <entryPoint>[ "bash", "-c", "java -Duser.timezone=GMT+08 $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /${project.build.finalName}.jar"]</entryPoint>
                         <resources>
                             <resource>
                                 <targetPath>/</targetPath>
