@@ -1,6 +1,6 @@
 spring:
   application:
-    name: doyto-cloud-registry
+    name: @project.artifactId@
   rabbitmq:
     host: ${RABBITMQ_DEFAULT_HOST:${ENV_HOST}}
     port: 5672

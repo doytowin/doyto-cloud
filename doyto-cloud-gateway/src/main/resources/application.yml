@@ -1,6 +1,6 @@
 spring:
   application:
-    name: doyto-cloud-gateway
+    name: @project.artifactId@
   cloud:
     config:
       discovery:

@@ -1,6 +1,6 @@
 doyto-cloud
 doyto-cloud-config
-doyto-cloud-registry
+doyto-cloud-eureka
 doyto-cloud-gateway
 
 

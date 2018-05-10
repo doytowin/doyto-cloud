@@ -4,4 +4,4 @@ server:
 info:
   name: @project.artifactId@
   version: @project.version@
-  date: @maven.build.timestamp@
+  date: @project.build.timestamp@
