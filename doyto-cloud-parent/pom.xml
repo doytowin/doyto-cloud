@@ -10,7 +10,7 @@
     <version>${revision}</version>
     <modules>
         <module>../doyto-cloud-config</module>
-        <module>../doyto-cloud-registry</module>
+        <module>../doyto-cloud-eureka</module>
         <module>../doyto-cloud-gateway</module>
         <module>../doyto-cloud-admin</module>
     </modules>
