@@ -13,6 +13,7 @@
         <module>../doyto-cloud-eureka</module>
         <module>../doyto-cloud-gateway</module>
         <module>../doyto-cloud-admin</module>
+        <module>../doyto-cloud-zipkin</module>
     </modules>
     <packaging>pom</packaging>
 

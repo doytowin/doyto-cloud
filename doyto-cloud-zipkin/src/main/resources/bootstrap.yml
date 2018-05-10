@@ -1,0 +1,12 @@
+server:
+  port: @docker.expose@
+
+info:
+  name: @project.artifactId@
+  version: @project.version@
+  date: @project.build.timestamp@
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${EUREKA_HOST:eureka}:8761/eureka/
