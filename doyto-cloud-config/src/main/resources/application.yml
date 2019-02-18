@@ -1,9 +1,12 @@
+server:
+  port: @docker.expose@
+
 spring:
   application:
     name: configserver
   rabbitmq:
-    host: ${RABBITMQ_DEFAULT_HOST:${ENV_HOST}}
-    port: 5672
+    host: ${RABBITMQ_DEFAULT_HOST:rabbitmq}
+    port: ${RABBITMQ_DEFAULT_PORT:5672}
     username: ${RABBITMQ_DEFAULT_USER:admin}
     password: ${RABBITMQ_DEFAULT_PASS:admin}
   cloud:
@@ -11,5 +14,16 @@ spring:
       server:
         git:
           username: f0rb@icloud.com
-          password: os--0404
           uri: https://gitee.com/doyto/doyto-config.git
+
+management.endpoints.web.exposure.include: "*"
+
+info:
+  name: @project.artifactId@
+  version: @project.version@
+  date: @project.build.timestamp@
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_HOST:eureka}:8761/eureka/

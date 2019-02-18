@@ -1,6 +1,6 @@
 package win.doyto.cloud;
 
-import de.codecentric.boot.admin.config.EnableAdminServer;
+import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
 

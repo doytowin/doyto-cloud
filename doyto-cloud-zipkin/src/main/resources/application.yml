@@ -2,7 +2,7 @@ spring:
   application:
     name: @project.artifactId@
   rabbitmq:
-    host: ${RABBITMQ_DEFAULT_HOST:${ENV_HOST}}
-    port: 5672
+    host: ${RABBITMQ_DEFAULT_HOST:rabbitmq}
+    port: ${RABBITMQ_DEFAULT_PORT:5672}
     username: ${RABBITMQ_DEFAULT_USER:admin}
     password: ${RABBITMQ_DEFAULT_PASS:admin}

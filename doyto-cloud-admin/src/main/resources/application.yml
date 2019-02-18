@@ -6,15 +6,8 @@ spring:
       discovery:
         enabled: true
   rabbitmq:
-    host: ${RABBITMQ_DEFAULT_HOST:${ENV_HOST}}
-    port: 5672
+    host: ${RABBITMQ_DEFAULT_HOST:rabbitmq}
+    port: ${RABBITMQ_DEFAULT_PORT:5672}
     username: ${RABBITMQ_DEFAULT_USER:admin}
     password: ${RABBITMQ_DEFAULT_PASS:admin}
-  boot:
-    admin:
-      routes:
-        endpoints: env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream,activiti
-      turbine:
-        clusters: default
-        location: turbine
 

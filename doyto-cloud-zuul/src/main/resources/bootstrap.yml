@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+info:
+  name: @project.artifactId@
+  version: @project.version@
+  date: @project.build.timestamp@
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${EUREKA_HOST:eureka}:8761/eureka/
