@@ -15,7 +15,7 @@
     <artifactId>doyto-cloud-gateway</artifactId>
 
     <properties>
-        <start-class>win.doyto.cloud.CloudGatewayApp</start-class>
+        <start-class>win.doyto.cloud.GatewayApplication</start-class>
         <docker.expose>8080</docker.expose>
     </properties>
 
@@ -28,12 +28,23 @@
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <version>1.4.6.RELEASE</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-web</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
-            <groupId>com.netflix.netflix-commons</groupId>
-            <artifactId>netflix-commons-util</artifactId>
-            <version>0.1.1</version>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
         </dependency>
     </dependencies>
 
