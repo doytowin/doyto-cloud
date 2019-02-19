@@ -31,7 +31,7 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <docker.image.prefix>docker.doyto.win</docker.image.prefix>
         <docker.image.base>docker.doyto.win/openjdk:8-jre-alpine</docker.image.base>
-        <docker.image.push>false</docker.image.push>
+        <docker.image.push>true</docker.image.push>
         <docker.expose>0</docker.expose>
         <docker.plugin.version>1.0.0</docker.plugin.version>
 
@@ -235,7 +235,7 @@
                         </execution>
                     </executions>
                     <configuration>
-                        <pushImage>true</pushImage>
+                        <pushImage>${docker.image.push}</pushImage>
                         <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
                         <baseImage>${docker.image.base}</baseImage>
                         <imageTags>
