@@ -17,6 +17,7 @@ spring:
           uri: https://gitee.com/doyto/doyto-config.git
 
 management.endpoints.web.exposure.include: "*"
+management.endpoint.health.show-details: always
 
 info:
   name: @project.artifactId@
